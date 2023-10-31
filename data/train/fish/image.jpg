@@ -1,0 +1,630 @@
+<html xmlns="https://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml"><head><title>Zoomshare 3 :Home</title><meta name="keywords" content="web page, website, domain, affordable web hosting, create a web site, design web site, Stats, shopping cart, web pages, web site, blog, calendar, build a web site, photo album, blog, email, hosting, sto
+rage, file storage, personal website"><meta name="description" content="Build a website, photo album, blog, shopping cart, email, and get a vanity domain with Zoomshare."><link href="css/yui-index.css" type="text/css" rel="stylesheet"><link href="css/zm-index.css" type="text/css" rel="stylesheet"><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"><link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet"><link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css"><link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/dataTables.jqueryui.min.css"><link rel="stylesheet" href="https://cdn.datatables.net/scroller/2.2.0/css/scroller.jqueryui.min.css"><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script><script type="text/javascript">
+                var TLD = (location.hostname.indexOf("dwqa")>-1) ? 'dwqa' : 'com';
+    </script><script type="text/javascript" src="js/jquery.js"></script><script type="text/javascript" src="js/yui-index.js"></script><script type="text/javascript" src="https://partner.googleadservices.com/gampad/google_service.js"></script><script type="text/javascript">
+    GS_googleAddAdSenseService("ca-pub-3370800852844528");
+    GS_googleEnableAllServices();
+    </script><script type="text/javascript">
+    GA_googleAddSlot("ca-pub-3370800852844528", "ZSHome");
+    </script><script type="text/javascript">
+    GA_googleFetchAds();
+    </script><script type="text/javascript">
+    GS_googleAddAdSenseService("ca-pub-3370800852844528");
+    GS_googleEnableAllServices();
+    </script><script type="text/javascript">
+    GA_googleAddSlot("ca-pub-3370800852844528", "ZSHome");
+    </script><script type="text/javascript">
+    GA_googleFetchAds();
+    </script><script type="text/javascript">
+
+    /* <![CDATA[ */
+
+      // common ns
+      var C = YAHOO.util.Cookie;
+      var D = YAHOO.util.Dom;
+      var E = YAHOO.util.Event;
+      //var M = google.maps;
+      var W = YAHOO.widget;
+
+      // browse widget vars, a temp convenience
+      //var Cities = ZSFat.Cities, CCategories = ZSFat.Cat;
+      var ads_map, loc_map, loc_menu, pane;
+
+      function calllogin(){
+        
+        var f = document.getElementById('zslogin');
+        f.action = 'https://ssl.zoomshare.'+TLD+'/:slogin';
+        f.validate = function () {
+          var rc = false;
+          var u;
+          var p = f['p'].value;
+          try {
+            f['u'].value =
+            f['u'].value.replace(/^\s+/,'').replace(/\s+$/,'').toLowerCase();
+            u = f['u'].value;
+            if (! u.match(/\w/)) {
+              f['u'].focus(); throw('Please enter your username');
+            }
+            if (! p.match(/\w/)) {
+              f['p'].focus(); throw('Please enter your password');
+            }
+            if (u.match(/.\@.+/)) {
+              f['u'].focus();
+              throw(u + "looks like an e-mail address, not a username");
+            }
+            if (u.match(/[^a-z0-9\-]/)) {
+              f['u'].focus();
+              throw("Your username may only contain letters, " +
+                "numerals and hyphens");
+            }
+            rc = true;
+          }
+          catch (e) { alert(e); }
+          finally { return rc; }
+        };
+        return f.validate();
+      }
+
+
+    /* ]]> */
+    </script><style>
+        .foot {
+            color: #999;
+            font-size: 80%;
+            text-decoration: none;
+        }
+
+        .btn {
+            --bs-btn-padding-x: 0.25rem;
+            --bs-btn-padding-y: 0.175rem;
+        }
+
+        .pagination-container {
+          display: flex;
+          justify-content: flex-center;
+          margin-top: 20px;
+        }
+
+        .pagination button {
+              background-color: white;
+              color: black;
+              border: none;
+              padding: 5px 10px;
+              margin-left: 5px;
+              border-radius: 20px;
+              transition: background-color 0.3s ease, transform 0.2s ease;
+              cursor: pointer;
+        }
+
+     
+
+
+        .pagination span {
+  
+            }
+             #currentPage {
+            display: inline-block;
+            padding: 10px;
+            font-size: 18px;
+            color: #333; /* Default text color */
+            transition: color 0.3s ease, background-color 0.3s ease;
+            cursor: pointer;
+        }
+
+        #currentPage:hover {
+            color: #333; /* Keep the text color the same on hover */
+            
+        }
+        .feed_user_date {
+            width: 190px;
+
+        }
+
+        .img-fluid {
+          max-width: 200%;
+          height: auto;
+        }
+
+    </style></head><body bgcolor="#fff" text="#000">
+    <div align="CENTER" width="100%">
+        <table cellspacing="0" cellpadding="0" class="table" width="900">
+            <tbody>
+                <tr class="fc-first fc-last">
+                    <td valign="top" class="fc-sun fc-widget-header fc-first">
+                        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+                            <div class="container-fluid">
+                                <a class="navbar-brand" href="https://zoomshare.com"><img class="img-fluid" src="img/ZS-Flame-Logo177-Italic.png" alt="zoomshare"></a>
+                                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                    <span class="navbar-toggler-icon"></span>
+                                </button>
+                                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                        <li class="nav-item">
+                                            <a class="nav-link active" aria-current="page" href="#">Features</a>
+                                        </li>
+                                    </ul>
+                                    <form class="d-flex" role="search">
+                                      <a class="btn btn-outline-primary" href="https://signup.zoomshare.com">Sign Up</a>
+
+                                         
+                                        <button class="btn btn-outline-success" type="button" data-bs-toggle="modal" data-bs-target="#loginModal">Tools Login</button>
+                                         
+                                        
+                                        <button id="followButton" class="btn btn-outline-info" type="button" data-bs-toggle="modal" data-bs-target="#followloginModal">Follow Login</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </nav>
+                    </td>
+                </tr>
+                <tr class="fc-first fc-last">
+                    <td valign="top" class="fc-sun fc-widget-header fc-first">
+                        
+                    <!--iicontentarea name="header" virtual=global.header.html --><!--/iicontentarea --></td>
+                </tr>
+                <tr class="fc-first fc-last">
+                    <td valign="top" class="fc-sun fc-widget-header fc-first">
+                        <div class="container">
+                            <table class="table">
+                                <tr>
+                                    <td scope="row" width="65%" style="vertical-align:middle"><h3 style="text-align:center;"><a href="https://signup.com" style="color:#cc3333; text-decoration:none">Get your Zoomshare website with <em><strong>Unlimited Follow Feature</strong></em>!<br>30 day Free trial!</a></h3></td>
+                                    <td align="center"><img src="img/man-phone-100b.png" class="img-fluid"></td>
+                                </tr>
+                            </table>
+                            <table class="table table-striped lg-max-width-80%" id="feedTable">
+                                <thead>
+                                  <tr>
+                                    <th class="feed_user_date" scope="col">User/Date</th>
+                                    <th scope="col">Notification</th>      
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                    
+                                </tbody>
+                            </table>
+                            <h4 style="text-align: center;display: none;" id="loading_img">Feed is Loading... Please wait!</h4>
+                          
+                        </div> 
+                        <div class="block" id="footer">
+                            <a href="/privacyPolicy.shtml">privacy policy</a> | <a href="/tos.shtml">terms of service</a> | <a href="/intellectual.shtml">intellectual property</a> | <a href="#" oncl ick="window.open('/:interactivehelp', 'contactUs', 'height=282,width=545,menubar=no,toolbar=no,scrollbars=yes,resizable=yes')">zoomshare faqs</a> | <a style="text-decoration:underline" href="mailto:customerservice@zoomshare.com?subject=C
+                            ustomer Service Inquiry from Zoomshare.com">contact us</a> <br>
+                            <span class="tiny2">Copyright © 1998-2020 DW Data, Inc. All Rights Reserved.<br>
+                          DigitalWork, I-Works, TotalWeb and zoomshare are trademarks of DW Data, Inc. and may be registered in certain jurisdictions.</span>
+                            <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="loginModalLabel">Welcome Back!</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form id="zslogin" onsubmit="calllogin()" action="" method="post">
+                                                <div>
+                                                    <table>
+                                                        <tr>
+                                                            <td><strong>Login</strong></td>
+                                                            <td><span class="login">Username</span><br>
+                                                                <input type="text" id="u" name="u" size="10" maxlength="255" class="tiny" placeholder="zoomshare username" value="">
+                                                            </td>
+                                                            <td>
+                                                                <span class="login">Password</span><br>
+                                                                <input type="password" id="p" name="p" size="10" maxlength="255" class="tiny" placeholder="zoomshare password" value="">
+                                                            </td>
+                                                            <td>
+                                                                <input type="submit" name="gobutton" value="Zoomshare Log In" class="goButton">
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td colspan="4" align="right">
+                                                                <a href="https://www.zoomshare.com/zoomshare_forgotpw.html" class="login">Forgot
+                                                                    your username or password?</a>
+                                                                <br><br>
+                                                                <div><em>Optimized for <a href="https://www.google.com/chrome/" target="_blank">Google Chrome</a></em></div>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            
+                            <div class="modal fade" id="followloginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content" style="width: 70%;">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="loginModalLabel">Login to get your feeds!</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div id="signup-container">
+                                                <label for="email" style="display: block;text-align: left; margin-bottom: 5px;">Email:</label>
+                                                <input type="email" id="email" required style="width: 100%; padding: 5px;float: left;text-align: left; border: 1px solid #ccc; border-radius: 4px;">
+                                                <br>
+                                                <br>
+                                                <label for="password" style="display: block;text-align: left; margin-bottom: 5px;">Password:</label>
+                                                <input type="password" id="password" required style="width: 100%; padding: 5px; border: 1px solid #ccc;float: left;text-align: left; border-radius: 4px;">
+                                                <br>
+                                                
+                                                <span class="success_message" style="color: green;float: left;text-align: left;"></span>
+                                                <br>
+                                                <br>
+                                                <button type="button" onclick="followlogin();" style="padding: 8px 16px;float: left;text-align: left; border: none; border-radius: 4px; cursor: pointer; font-size: 16px; font-weight: bold; background-color: #007bff; color: #fff;">Login</button>
+                                                
+                                                <button type="button" data-bs-dismiss="modal" aria-label="Close" style="padding: 8px 16px; border: none;float: left;text-align: left; border-radius: 4px; cursor: pointer; font-size: 16px; font-weight: bold; background-color: #dc3545; color: #fff; margin-left: 10px;">Cancel</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body><script src="https://www.google-analytics.com/urchin.js" type="text/javascript"></script><script src="https://code.jquery.com/jquery-3.7.0.js"></script><script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script><script src="https://cdn.datatables.net/1.13.6/js/dataTables.jqueryui.min.js"></script><script src="https://cdn.datatables.net/scroller/2.2.0/js/dataTables.scroller.min.js"></script><script>
+
+    function followlogin(){
+        jQuery(".success_message").fadeIn(30);
+        var email = jQuery("#email").val();
+        var password = jQuery("#password").val();
+        var emailRegex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/;
+        if (email && password && emailRegex.test(email) ) {
+            var data = {
+                'email' : email,
+                'password' : password,
+                'action' :  'login_zoomshare'
+            };
+            jQuery.ajax({
+                url: 'https://www.followapi.zoomshare.com/index_follow.cgi',
+                method: 'POST',
+                data: data,
+                dataType: 'json',
+                success: function(responseData) {
+                    //console.log(responseData);
+                    jQuery(".success_message").html("");
+                    if (responseData.success == true) {
+                        setCookie("uuid",responseData.uuid);
+                        setCookie("feeds_count",0);
+                        if(setCookie){
+                          location.reload();
+                        }
+                      jQuery(".success_message").css("color","green");
+                      jQuery(".success_message").html(responseData.message);
+                      jQuery(".success_message").fadeOut(3000);
+
+                    }else{
+                      jQuery(".success_message").css("color","red");
+                      jQuery(".success_message").html(responseData.message);
+                      jQuery(".success_message").fadeOut(3000);
+                    }
+                },
+                error: function(xhr, status, error) {
+                    console.log(error);
+                }
+            });
+
+        }else{
+        
+            jQuery(".success_message").css("color","red");
+            jQuery(".success_message").html("Please enter valid email and password !");
+            jQuery(".success_message").fadeOut(3000);
+        }
+    }
+
+    function showPersonalizationPopup() {
+      document.getElementById('personalizationPopup').style.display = 'block';
+    }
+
+    function hidePersonalizationPopup() {
+       document.getElementById('personalizationPopup').style.display = 'none';
+    }
+
+    function cancelSignup() {
+      hidePersonalizationPopup();
+    }
+
+    function setCookie(cname,cvalue) {
+      document.cookie = cname + "=" + cvalue;
+      document.cookie = cname +"=" + cvalue + "; domain=zoomshare.com;path=/";
+    }
+
+    function getCookie(cname) {
+        let name = cname + "=";
+        let decodedCookie = decodeURIComponent(document.cookie);
+        let ca = decodedCookie.split(';');
+        for(let i = 0; i < ca.length; i++) {
+            let c = ca[i];
+            while (c.charAt(0) == ' ') {
+              c = c.substring(1);
+            }
+            if (c.indexOf(name) == 0) {
+              return c.substring(name.length, c.length);
+            }
+        }
+        return "";
+    }
+
+    //check uid is available or not
+    var uuidValue_zoomshare = getCookie("uuid");
+    if(uuidValue_zoomshare){
+        personalize_random_feeds_onload(uuidValue_zoomshare);
+        setInterval(function() {
+            personalize_random_feeds(uuidValue_zoomshare);
+        }, 5000);
+    }else {
+       showrandomfeeds_onload();
+       setInterval(function() {
+            showrandomfeeds();
+        }, 5000); 
+    }
+
+ 
+    function personalize_random_feeds_onload(uuidValue_zoomshare) {
+        //var uuidValue_zoomshare = getCookie("uuid");
+        if(uuidValue_zoomshare){
+              var data = {
+              'action': 'zoomshare_site_id',
+              'uuid': uuidValue_zoomshare
+            };
+            jQuery.ajax({
+              url: 'https://www.followapi.zoomshare.com/index_follow.cgi',
+              method: 'POST',
+              data: data,
+              dataType: 'json',
+              success: function(responseData) {
+               //console.log(responseData);
+                if (Array.isArray(responseData)) {
+                  var feedarrayblog  = responseData;
+                  fetchAndDisplayXMLFeed(feedarrayblog)
+                } else {
+                    console.error("Invalid response format");
+                }
+              },
+              error: function(xhr, status, error) {
+                console.error('Error:', status, error);
+              }
+            });
+        }
+    }
+    
+    function personalize_random_feeds(uuidValue_zoomshare){
+        //var uuidValue_zoomshare = getCookie("uuid");
+        if(uuidValue_zoomshare){
+              var data = {
+              'action': 'zoomshare_site_id',
+              'uuid': uuidValue_zoomshare
+            };
+            jQuery.ajax({
+              url: 'https://www.followapi.zoomshare.com/index_follow.cgi',
+              method: 'POST',
+              data: data,
+              dataType: 'json',
+              success: function(responseData) {
+               //console.log(responseData);
+                if (Array.isArray(responseData)) {
+                  var feedarrayblog  = responseData;
+                  var feed_counts = getCookie("feeds_count");
+                  feedRefersh(feedarrayblog, feed_counts);
+                } else {
+                    console.error("Invalid response format");
+                }
+              },
+              error: function(xhr, status, error) {
+                console.error('Error:', status, error);
+              }
+            });
+        }
+    }
+     
+    function showrandomfeeds_onload() {
+        var data = {
+            'action' :  'showrandomfeeds'
+        };
+        jQuery.ajax({
+          url: 'https://www.followapi.zoomshare.com/index_follow.cgi',
+          method: 'POST',
+          data: data,
+          dataType: 'json',
+          success: function(responseData) {
+            console.log(responseData);
+            if (Array.isArray(responseData)) {
+              var feedarrayblog  = responseData;
+              fetchAndDisplayXMLFeed(feedarrayblog);
+            } else {
+                console.error("Invalid response format");
+            }
+          },
+          error: function(xhr, status, error) {
+            console.error('Error:', status, error);
+          }
+        });
+    }   
+
+    function showrandomfeeds() {
+        var data = {
+            'action' :  'showrandomfeeds'
+        };
+        jQuery.ajax({
+          url: 'https://www.followapi.zoomshare.com/index_follow.cgi',
+          method: 'POST',
+          data: data,
+          dataType: 'json',
+          success: function(responseData) {
+            //console.log(responseData);
+            if (Array.isArray(responseData)) {
+              var feedarrayblog  = responseData;
+              var feed_counts = getCookie("feeds_count");
+              feedRefersh(feedarrayblog, feed_counts)
+              //localStorage.setItem('random_feeds_data',JSON.stringify(feedarrayblog));
+            } else {
+                console.error("Invalid response format");
+            }
+          },
+          error: function(xhr, status, error) {
+            console.error('Error:', status, error);
+          }
+        });
+    }
+
+    function feedRefersh(feedarrayblog, feed_counts){
+         var feedsArrayCount = feedarrayblog.length;
+         if(feed_counts < feedsArrayCount) {
+            fetchAndDisplayXMLFeed(feedarrayblog);
+            setCookie("feeds_count",feedsArrayCount);
+            localStorage.setItem("feeds_data",JSON.stringify(feedarrayblog));
+          }
+    }
+
+
+        function fetchAndDisplayXMLFeed(feedarrayblog) {
+            var table = $('#feedTable').DataTable();
+            // If DataTable is initialized, destroy it before reinitializing
+            if ($.fn.DataTable.isDataTable('#feedTable')) {
+                table.destroy();
+            }
+            table = $('#feedTable').DataTable({
+                "bSort": false
+            });
+            $("#loading_img").show();
+            if (table.rows().count() === 0) {
+                for(let i = 0; i < feedarrayblog.length; i++) {
+                    var record = feedarrayblog[i];
+                    var user = record.user;
+                    var userHTML = '<strong>' + user + '</strong>';
+                    const parsedDate = new Date(record.date);
+                    var feed_date = formatDateString(parsedDate);
+                    var userDateCell = userHTML + '<br>' + feed_date;
+                    var description = record.description;
+                    var link = record.link;
+                    var notificationText = '';
+                    var imageRegex = /<img src="(.*?)"/;
+                    var match = imageRegex.exec(description);
+                    // Regex for finding the blog in link
+                    const blogRegex = /blog/g;
+                    const matchedLink = link.match(blogRegex);
+                    if (match) {
+                        var imageURL = match[1];
+                        notificationText = '<a style="color:blue; font-weight:700;" href="' + imageURL + '" target="_blank">Photo</a>';
+                    } else if (matchedLink) {
+                        var blogLink = "https://" + user + ".zoomshare.com/2.shtml";
+                        notificationText = '<a style="color:blue; font-weight:700;" href="' + blogLink + '" target="_blank">Blog</a>';
+                    }
+                    // Code for notification end
+                    var descriptionText = description.replace(/<\/?[^>]+(>|$)/g, "");
+                    var truncatedDescription = descriptionText.substring(0, 700); // Get the first 15 characters
+                    var remainingDescription = descriptionText.substring(700); // Get the remaining text
+                    var moreLink = '<a href="javascript:void(0);" style="color:blue; font-weight:200;" class="more-link">..more</a>';
+                    if(truncatedDescription.length<200){
+                        var descriptionContent = '<span class="truncated">' + truncatedDescription + '<span class="more-content" style="display:none;">' + remainingDescription + '</span> ' + '</span>';
+                    }else{
+                    var descriptionContent = '<span class="truncated">' + truncatedDescription + '<span class="more-content" style="display:none;">' + remainingDescription + '</span> ' + moreLink + '</span>';
+                    }
+                    var description_notification = notificationText + ' ' + descriptionContent;
+                    table.row.add([userDateCell,description_notification]);
+                }
+                 table.draw();
+                 $("#loading_img").hide();
+            }
+             else {
+                var feedlocalData = localStorage.getItem('feeds_data');
+                var feedlocalDataArray = JSON.parse(feedlocalData);
+                const differntcefeed = findArrayDifference(feedarrayblog, feedlocalDataArray);
+                var feedsArrayCount = feedarrayblog.length;
+                var feed_counts = getCookie("feeds_count");
+                 if(feed_counts < feedsArrayCount) {                
+                    for(let i = 0; i < differntcefeed.length; i++) {
+                        var record = differntcefeed[i];
+                        var user = record.user;
+                        var userHTML = '<strong>' + user + '</strong>';
+                        const parsedDate = new Date(record.date);
+                        var feed_date = formatDateString(parsedDate);
+                        var userDateCell = userHTML + '<br>' + feed_date;
+
+                        var description = record.description;
+                        var link = record.link;
+                        var notificationText = '';
+                        var imageRegex = /<img src="(.*?)"/;
+                        var match = imageRegex.exec(description);
+                        // Regex for finding the blog in link
+                        const blogRegex = /blog/g;
+                        const matchedLink = link.match(blogRegex);
+                        if (match) {
+                            var imageURL = match[1];
+                            notificationText = '<a style="color:blue; font-weight:700;" href="' + imageURL + '" target="_blank">Photo</a>';
+                        } else if (matchedLink) {
+                            var blogLink = "https://" + user + ".zoomshare.com/2.shtml";
+                            notificationText = '<a style="color:blue; font-weight:700;" href="' + blogLink + '" target="_blank">Blog</a>';
+                        }
+                        // Code for notification end
+                        var descriptionText = description.replace(/<\/?[^>]+(>|$)/g, "");
+                        var truncatedDescription = descriptionText.substring(0, 700); // Get the first 15 characters
+                        var remainingDescription = descriptionText.substring(700); // Get the remaining text
+                        var moreLink = '<a href="javascript:void(0);" style="color:blue; font-weight:200;" class="more-link">..more</a>';
+                        if(truncatedDescription.length<200){
+                            var descriptionContent = '<span class="truncated">' + truncatedDescription + '<span class="more-content" style="display:none;">' + remainingDescription + '</span> ' + '</span>';
+                        }else{
+                        var descriptionContent = '<span class="truncated">' + truncatedDescription + '<span class="more-content" style="display:none;">' + remainingDescription + '</span> ' + moreLink + '</span>';
+                        }
+                        var description_notification = notificationText + ' ' + descriptionContent;
+                        //var table = $('#feedTable').DataTable();
+                        table.row.add([userDateCell,description_notification]);
+                    }
+                    table.draw();
+                    $("#loading_img").hide();
+                }
+             }
+        }
+
+        function findArrayDifference(array1, array2) {
+          const difference = [];
+
+          for (const item1 of array1) {
+            let found = false;
+            for (const item2 of array2) {
+              if (JSON.stringify(item1) === JSON.stringify(item2)) {
+                found = true;
+                break;
+              }
+            }
+            if (!found) {
+              difference.push(item1);
+            }
+          }
+          return difference;
+        }
+
+        // Function to format a Date object as "Thu Aug 10 4:40pm"
+        function formatDateString(date) {
+            const daysOfWeek = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+            const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+            const day = daysOfWeek[date.getDay()];
+            const month = months[date.getMonth()];
+            const dayOfMonth = date.getDate();
+            let hours = date.getHours();
+            const ampm = hours >= 12 ? "pm" : "am";
+            hours = hours % 12 || 12; // Convert to 12-hour format
+            const minutes = String(date.getMinutes()).padStart(2, '0');
+            return `${day} ${month} ${dayOfMonth} ${hours}:${minutes}${ampm}`;
+        }
+
+        // Function to toggle the description content
+        function toggleDescription() {
+            var moreContent = this.parentElement.getElementsByClassName("more-content")[0];
+            if (moreContent.style.display === "none") {
+                moreContent.style.display = "inline";
+                this.innerHTML = 'less';
+            } else {
+                moreContent.style.display = "none";
+                this.innerHTML = '..more';
+            }
+        }
+</script><script type="text/javascript">
+  _uacct = "UA-83262-2";
+  urchinTracker();
+  D.get('u').select();
+</script></html>

@@ -1,0 +1,22 @@
+pip install --upgrade pip
+python -m pip install --upgrade pip setuptools
+conda install -c anaconda cmake
+conda install -c conda-forge docker
+conda install -c fastai fastai
+conda install -c conda-forge m2w64-gcc
+conda install -c anaconda libffi
+conda install -c conda-forge rust
+conda install -c auto cargo
+pip3 install cargo
+conda install -c conda-forge transformers
+pip3 install fast-bert (try rust compiler)
+pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu117
+pip3 install Flask==1.1.2
+pip3 install googletrans==3.0.0
+conda install -c anaconda jupyter
+pip3 install pandas==1.0.5
+pip3 install py-spy==0.3.3
+pip3 install requests==2.23.0
+pip3 install tensorboard==2.3.0
+pip3 install torchtext==0.7.0
+pip3 install urllib3==1.24.3
